@@ -29,14 +29,13 @@
     // BoxGeometry  >> CUBE
     var cubeGeometry = new THREE.BoxGeometry(2,2,2)
     // MeshBasicMaterial >> Material for CUBE
-    var cubeMaterial = new THREE.MeshBasicMaterial({color : "yellow"})
+    var cubeMaterial = new THREE.MeshBasicMaterial({color : "blue"})
     // Mesh = Geometry + Material
     var cube = new THREE.Mesh(cubeGeometry, cubeMaterial)
 
     cube.position.set(0,0,0)
     // Add Mesh in scene
     scene.add(cube)
-
 
     // Renderer
     var renderer = new THREE.WebGLRenderer ({antialize : true});
@@ -56,7 +55,6 @@
     }
 
      animate();
-
     </script>
     </div>
 </body>
