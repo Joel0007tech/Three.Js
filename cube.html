@@ -6,6 +6,9 @@
     <title>Three Js language</title>
 </head>
 <body>
+    <h3 style="color: white;">
+        THREE.JS 
+    </h3>
     <div id="container">
 
    <script type="module">
@@ -27,15 +30,20 @@
 
     // Geometry + Material = Mesh
     // BoxGeometry  >> CUBE
-    var cubeGeometry = new THREE.BoxGeometry(2,2,2)
-    // MeshBasicMaterial >> Material for CUBE
-    var cubeMaterial = new THREE.MeshBasicMaterial({color : "blue"})
-    // Mesh = Geometry + Material
-    var cube = new THREE.Mesh(cubeGeometry, cubeMaterial)
+    // var cubeGeometry = new THREE.BoxGeometry(2,2,2)
+    // // MeshBasicMaterial >> Material for CUBE
+    // var cubeMaterial = new THREE.MeshBasicMaterial({color : "blue"})
+    // // Mesh = Geometry + Material
+    // var cube = new THREE.Mesh(cubeGeometry, cubeMaterial)
 
-    cube.position.set(0,0,0)
-    // Add Mesh in scene
-    scene.add(cube)
+    // cube.position.set(0,0,0)
+    // // Add Mesh in scene
+    // scene.add(cube)
+
+    const geometry = new THREE. CapsuleGeometry(1, 1);
+    const material = new THREE.MeshBasicMaterial({color: "red"});
+    const capsule = new THREE.Mesh(geometry, material);
+    scene.add(capsule)
 
     // Renderer
     var renderer = new THREE.WebGLRenderer ({antialize : true});
@@ -47,14 +55,24 @@
     element.appendChild(renderer.domElement)
 
 
-    function animate() {
-        cube.rotation.y += 0.01
-        cube.rotation.x += 0.01
-        requestAnimationFrame(animate);
+    // function animate() {
+    //     cube.rotation.y += 0.01
+    //     cube.rotation.x += 0.01
+    //     requestAnimationFrame(animate);
+    //     renderer.render(scene, camera)
+    // }
+
+    //  animate();
+
+     function another() {
+        capsule.rotation.y += 0.01
+        capsule.rotation.x += 0.01
+        requestAnimationFrame(another);
         renderer.render(scene, camera)
     }
 
-     animate();
+     another();
+
     </script>
     </div>
 </body>
