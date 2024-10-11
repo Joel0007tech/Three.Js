@@ -46,26 +46,27 @@
         // scene.add(cubeMesh);
  
  
-        const cubeGeo2 = new THREE.BoxGeometry(1,1);
-        const cubeMat2 = new THREE.MeshBasicMaterial({color:"blue"})
-        const cubeMesh2 = new THREE.Mesh(cubeGeo2, cubeMat2)
-        cubeMesh2.position.set(-4.5, 0.5, -0.01)
-        scene.add(cubeMesh2);
+        const cubeGeo1 = new THREE.BoxGeometry(10, 5, 0.2);
+        const cubeMat1 = new THREE.MeshBasicMaterial({color:"blue"})
+        const cubeMesh1 = new THREE.Mesh(cubeGeo1, cubeMat1)
+        cubeMesh1.position.set(0, 2.5, -4)
+        scene.add(cubeMesh1);
 
-        const cubeGeo3 = new THREE.BoxGeometry(1,1);
+        const cubeGeo3 = new THREE.BoxGeometry(10, 5, 0.2);
         const cubeMat3 = new THREE.MeshBasicMaterial({color:"green"})
         const cubeMesh3 = new THREE.Mesh(cubeGeo3, cubeMat3)
-        cubeMesh3.position.set(4.5, 0.5, -0.07)
+        cubeMesh3.position.set(0, 2.5, 4)
         scene.add(cubeMesh3);
 
-        const cubeGeoFront = new THREE.BoxGeometry(1,1);
-        const cubeMatFront = new THREE.MeshBasicMaterial({color:"black"})
-        const cubeMeshFront = new THREE.Mesh(cubeGeoFront, cubeMatFront)
-        cubeMeshFront.position.set(0.1,-0.2, 5)
-        scene.add(cubeMeshFront);
+        const cubeGeoRoof = new THREE.BoxGeometry(10,5, 0.2);
+        const cubeMatRoof = new THREE.MeshBasicMaterial({color:"white"})
+        const cubeMeshRoof = new THREE.Mesh(cubeGeoRoof, cubeMatRoof)
+        cubeMeshRoof.position.set(0, 5,)
+        cubeMeshRoof.rotation.set(1.6,0,0)
+        // scene.add(cubeMeshRoof);
 
         const g1 = new THREE.Group();
-        g1.add(plane, cubeMesh2, cubeMesh3, cubeMatFront)
+        g1.add(plane, cubeMesh1, cubeMesh3, cubeMeshRoof)
         scene.add(g1)
  
         // Renderer
@@ -78,9 +79,9 @@
         element.appendChild(renderer.domElement);
  
         function animate() {
-            g1.rotation.x += 0.01
-            plane.rotation.x += 0.01
-            cubeMeshFront.x += 0.01
+            g1.rotation.y += 0.01
+            // plane.rotation.x += 0.01
+            // cubeMeshFront.x += 0.01
             requestAnimationFrame(animate); // this method calls `animate` frame again & again
             renderer.render(scene, camera);
         }
