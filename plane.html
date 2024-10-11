@@ -39,29 +39,29 @@
         plane.rotation.set(1.6,0,0)
         scene.add( plane );
         
-        const cubeGeo = new THREE.BoxGeometry(3,3);
+        const cubeGeo = new THREE.BoxGeometry(4,4);
         const cubeMat = new THREE.MeshBasicMaterial({color:"red"})
         const cubeMesh = new THREE.Mesh(cubeGeo, cubeMat)
- 
+        cubeMesh.position.set(0.1, -0.2, -5)
         scene.add(cubeMesh)
  
  
         const cubeGeo2 = new THREE.BoxGeometry(1,1);
         const cubeMat2 = new THREE.MeshBasicMaterial({color:"blue"})
         const cubeMesh2 = new THREE.Mesh(cubeGeo2, cubeMat2)
-        cubeMesh2.position.set(-4,0.5,-0.01)
+        cubeMesh2.position.set(-4.5, 0.5, -0.01)
         scene.add(cubeMesh2)
 
         const cubeGeo3 = new THREE.BoxGeometry(1,1);
         const cubeMat3 = new THREE.MeshBasicMaterial({color:"green"})
         const cubeMesh3 = new THREE.Mesh(cubeGeo3, cubeMat3)
-        cubeMesh3.position.set(4,0.5,-0.01)
+        cubeMesh3.position.set(4.5, 0.5, -0.07)
         scene.add(cubeMesh3)
 
         const cubeGeoFront = new THREE.BoxGeometry(3,3);
         const cubeMatFront = new THREE.MeshBasicMaterial({color:"black"})
         const cubeMeshFront = new THREE.Mesh(cubeGeoFront, cubeMatFront)
-        cubeMesh3.position.set(5,1,1)
+        cubeMeshFront.position.set(0.1,-0.2, 5)
         scene.add(cubeMeshFront)
  
         // Renderer
