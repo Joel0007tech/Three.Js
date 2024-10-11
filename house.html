@@ -37,15 +37,8 @@
         const plane = new THREE.Mesh( geometry, material );
         // Add PLANE Mesh into scene     
         plane.rotation.set(1.6,0,0)
-        scene.add( plane );
-        
-        // const cubeGeo = new THREE.BoxGeometry(1,1);
-        // const cubeMat = new THREE.MeshBasicMaterial({color:"red"})
-        // const cubeMesh = new THREE.Mesh(cubeGeo, cubeMat)
-        // cubeMesh.position.set(0.1, -0.2, -5)
-        // scene.add(cubeMesh);
- 
- 
+        scene.add( plane )
+  
         const cubeGeo1 = new THREE.BoxGeometry(10, 5, 0.2);
         const cubeMat1 = new THREE.MeshBasicMaterial({color:"blue"})
         const cubeMesh1 = new THREE.Mesh(cubeGeo1, cubeMat1)
@@ -58,15 +51,22 @@
         cubeMesh3.position.set(0, 2.5, 4)
         scene.add(cubeMesh3);
 
-        const cubeGeoRoof = new THREE.BoxGeometry(10,5, 0.2);
+        const cubeGeoRoof = new THREE.BoxGeometry(10, 8 , 0.2);
         const cubeMatRoof = new THREE.MeshBasicMaterial({color:"white"})
         const cubeMeshRoof = new THREE.Mesh(cubeGeoRoof, cubeMatRoof)
-        cubeMeshRoof.position.set(0, 5,)
+        cubeMeshRoof.position.set(0, 5, 0)
         cubeMeshRoof.rotation.set(1.6,0,0)
         // scene.add(cubeMeshRoof);
 
+        const cubeGeo4 = new THREE.BoxGeometry(8,5,0.2);
+        const cubeMat4 = new THREE.MeshBasicMaterial({color:"green"})
+        const cubeMesh4 = new THREE.Mesh(cubeGeo4, cubeMat4)
+        cubeMesh4.position.set(-5, 2.4, 0.1)
+        cubeMesh4.rotation.set(0,1.6,0)
+        // scene.add(cubeMesh4);
+
         const g1 = new THREE.Group();
-        g1.add(plane, cubeMesh1, cubeMesh3, cubeMeshRoof)
+        g1.add(plane, cubeMesh1, cubeMesh3, cubeMeshRoof, cubeMesh4)
         scene.add(g1)
  
         // Renderer
