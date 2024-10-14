@@ -65,6 +65,11 @@
         cubeMesh4.rotation.set(0,1.6,0)
         // scene.add(cubeMesh4);
 
+        const geometryCone = new THREE.ConeGeometry( 2, 5, 32 );
+        const materialCone = new THREE.MeshBasicMaterial({color: "yellow"});
+        const cone = new THREE.Mesh( geometryCone, materialCone );
+        scene.add( cone );
+
         const g1 = new THREE.Group();
         g1.add(plane, cubeMesh1, cubeMesh3, cubeMeshRoof, cubeMesh4)
         scene.add(g1)
