@@ -78,8 +78,8 @@
         element.appendChild(renderer.domElement);
  
         function animate() {
-            g1.rotation.x += 0.01
-            plane.rotation.x += 0.01
+            // g1.rotation.x += 0.01
+            plane.rotation.y += 0.01
             cubeMeshFront.x += 0.01
             requestAnimationFrame(animate); // this method calls `animate` frame again & again
             renderer.render(scene, camera);

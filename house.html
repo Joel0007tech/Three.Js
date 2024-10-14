@@ -65,9 +65,10 @@
         cubeMesh4.rotation.set(0,1.6,0)
         // scene.add(cubeMesh4);
 
-        const geometryCone = new THREE.ConeGeometry( 2, 5, 32 );
+        const geometryCone = new THREE.ConeGeometry(6,2, 35 );
         const materialCone = new THREE.MeshBasicMaterial({color: "yellow"});
         const cone = new THREE.Mesh( geometryCone, materialCone );
+        cone.position.set(0, 6, 0)
         scene.add( cone );
 
         const g1 = new THREE.Group();
@@ -87,6 +88,7 @@
  
         function animate() {
             g1.rotation.y += 0.01
+            cone.rotation.y +=0.01
             // plane.rotation.x += 0.01
             // cubeMeshFront.x += 0.01
             requestAnimationFrame(animate); // this method calls `animate` frame again & again
