@@ -69,6 +69,8 @@
         g1.add(plane, cubeMesh1, cubeMesh3, cubeMeshRoof, cubeMesh4)
         scene.add(g1)
  
+        const light = new THREE.HemisphereLight(0xffffbb, 0x080820, 0.5);
+        scene.add( light )
         // Renderer
         var renderer = new THREE.WebGLRenderer({antialias : true});
         renderer.setSize(width, height);
