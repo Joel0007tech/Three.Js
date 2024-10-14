@@ -69,8 +69,8 @@
         const materialCone = new THREE.MeshBasicMaterial({color: "yellow"});
         const cone = new THREE.Mesh( geometryCone, materialCone );
         cone.position.set(0, 6, 0)
-        coe.rotation.set(1.6, 0, 0)
-        // scene.add( cone );
+        cone.rotation.set(0, 0, 0)
+        scene.add( cone );
 
         const g1 = new THREE.Group();
         g1.add(plane, cubeMesh1, cubeMesh3, cubeMeshRoof, cubeMesh4, cone)
