@@ -69,10 +69,11 @@
         const materialCone = new THREE.MeshBasicMaterial({color: "yellow"});
         const cone = new THREE.Mesh( geometryCone, materialCone );
         cone.position.set(0, 6, 0)
-        scene.add( cone );
+        coe.rotation.set(1.6, 0, 0)
+        // scene.add( cone );
 
         const g1 = new THREE.Group();
-        g1.add(plane, cubeMesh1, cubeMesh3, cubeMeshRoof, cubeMesh4)
+        g1.add(plane, cubeMesh1, cubeMesh3, cubeMeshRoof, cubeMesh4, cone)
         scene.add(g1)
  
         const light = new THREE.HemisphereLight(0xffffbb, 0x080820, 0.5);
@@ -88,7 +89,7 @@
  
         function animate() {
             g1.rotation.y += 0.01
-            cone.rotation.y +=0.01
+            // cone.rotation.y +=0.01
             // plane.rotation.x += 0.01
             // cubeMeshFront.x += 0.01
             requestAnimationFrame(animate); // this method calls `animate` frame again & again
